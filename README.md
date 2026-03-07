@@ -1,6 +1,6 @@
-# CloudSentinel – AWS Cloud Security Auditor
+# AWS Cloud Security Auditor
 
-CloudSentinel is a Python-based AWS security auditing tool that scans cloud infrastructure for common security misconfigurations and generates a visual security report.
+AWS Cloud Security Auditor is a Python-based AWS security auditing tool that scans cloud infrastructure for common security misconfigurations and generates a visual security report.
 
 ## Features
 
