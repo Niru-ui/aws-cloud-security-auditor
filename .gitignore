@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+scan_report.json
+report.html
+reports/
+.aws/
