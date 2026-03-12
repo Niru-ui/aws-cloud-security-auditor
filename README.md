@@ -3,39 +3,42 @@
 Automated AWS cloud security auditing tool built in Python that scans AWS infrastructure for security misconfigurations and generates a visual HTML security report.
 The scanner analyzes common AWS security risks across IAM, S3, EC2 security groups, and CloudTrail, calculates a security score, and provides remediation recommendations.
 
+## 🔍 Security Checks
 
-🎯 What This Does
+### IAM — Identity and Access Management
 
-Cloud environments are often breached due to misconfigured permissions, exposed services, or missing security controls.
+| Check | What It Detects | Severity |
+|------|----------------|---------|
+| User MFA Status | IAM users without multi-factor authentication | 🟠 Medium |
+| Root MFA | Root account without MFA protection | 🔴 High |
+| Access Key Age | Access keys older than recommended rotation period | 🟡 Medium |
 
-This project helps identify security risks by automatically scanning AWS services and generating a structured report highlighting:
-high-risk vulnerabilities
-misconfigurations
-remediation steps
+---
 
-🔍 Security Checks
-IAM — Identity and Access Management
-Check	What It Detects	Severity
-User MFA Status	IAM users without multi-factor authentication	Medium
-Root MFA	Root account without MFA enabled	High
-Access Key Age	Detects old or risky access keys	Medium
+### S3 — Simple Storage Service
 
-S3 — Storage Security
-Check	What It Detects	Severity
-Public Access Block	Buckets accessible from the internet	High
-Encryption Status	Buckets without encryption enabled	High
-Logging Status	Buckets without access logging	Medium
+| Check | What It Detects | Severity |
+|------|----------------|---------|
+| Public Access Block | Buckets accessible by anyone online | 🔴 Critical |
+| Encryption Status | Buckets without AES256 encryption | 🟡 High |
+| Access Logging | Buckets without audit trail logging | 🟠 Medium |
 
-EC2 — Security Groups
-Check	What It Detects	                                                                    Severity
-Open SSH Access	Security group allowing 0.0.0.0/0 on port 22	                              High
-Public Inbound Rules	Security groups allowing unrestricted inbound traffic                	High
+---
 
+### EC2 — Security Groups
 
+| Check | What It Detects | Severity |
+|------|----------------|---------|
+| Open SSH Access | Security group allowing `0.0.0.0/0` on port 22 | 🔴 High |
+| Public Inbound Rules | Security group allowing unrestricted inbound traffic | 🔴 High |
 
-CloudTrail — Audit Logging
-Check	What It Detects	Severity
-CloudTrail Status	AWS account without CloudTrail logging enabled	High
+---
+
+### CloudTrail — Audit Logging
+
+| Check | What It Detects | Severity |
+|------|----------------|---------|
+| CloudTrail Status | AWS account without CloudTrail logging enabled | 🔴 High |
 
 ## Tech Stack
 
@@ -43,9 +46,134 @@ CloudTrail Status	AWS account without CloudTrail logging enabled	High
 - AWS SDK for Python (boto3)
 - HTML reporting
 
-## How to Run
+## 📋 Real Output From My AWS Account
+=======================================================
+   AWS SECURITY AUDIT — IAM + S3 + EC2 + CLOUDTRAIL
+   Run at: 2026-03-12 18:34
+=======================================================
 
-Install dependencies:
+🔍 CHECK 1: S3 Bucket Public Access
 
-```bash
-pip install -r requirements.txt
+  📦 Bucket: security-test-2026
+  ✅ SAFE  | Public access block fully enabled
+
+🔍 CHECK 2: S3 Bucket Encryption
+
+  📦 Bucket: security-test-2026
+  ✅ SAFE  | Encryption enabled
+
+🔍 CHECK 3: EC2 Security Groups
+
+  ⚠️ WARNING | test-ssh (sg-002219d7c09553ecc)
+  Open inbound rule to 0.0.0.0/0 on tcp 22-22
+
+  ⚠️ WARNING | test-ssh (sg-002219d7c09553ecc)
+  Open inbound rule to 0.0.0.0/0 on tcp 0-0
+
+🔍 CHECK 4: IAM User MFA Status
+
+  ⚠️ WARNING | scanner-user does not have MFA enabled
+
+🔍 CHECK 5: IAM Access Key Age
+
+  ✅ SAFE  | scanner-user access key age is 5 days
+
+🔍 CHECK 6: CloudTrail Configuration
+
+  ⚠️ WARNING | CloudTrail is not enabled
+
+=======================================================
+   IAM SUMMARY
+=======================================================
+  Total users scanned : 1
+  Users WITH MFA      : 0 ❌
+  Users WITHOUT MFA   : 1 ⚠️
+
+=======================================================
+   S3 BUCKET SECURITY CHECKS
+=======================================================
+
+  📦 Scanning bucket: security-test-2026
+     ✅ Public Access  | Blocked
+     ✅ Encryption     | Enabled
+     ⚠️ Access Logging | Not enabled
+
+=======================================================
+   EC2 SECURITY GROUP FINDINGS
+=======================================================
+
+  ⚠️ sg-002219d7c09553ecc
+     Open inbound rule to 0.0.0.0/0 on port 22
+     Open inbound rule to 0.0.0.0/0 on port 0
+
+=======================================================
+   CLOUDTRAIL STATUS
+=======================================================
+
+  ⚠️ CloudTrail is not enabled
+
+=======================================================
+   FULL AUDIT COMPLETE
+=======================================================
+
+Detected Issues:
+- EC2 security group open to internet
+- IAM user without MFA
+- Root account MFA not enabled
+- CloudTrail logging disabled
+
+Report saved to: scan_report.json
+
+🏗 How It Works
+
+Your Laptop
+     │
+     │  Python boto3 API calls
+     ▼
+AWS Account
+├── IAM Service
+│   ├── Scan users for MFA status
+│   ├── Check access key age
+│   └── Verify root account MFA
+│
+├── S3 Service
+│   ├── List all buckets
+│   ├── Check public access block
+│   └── Verify encryption enabled
+│
+├── EC2 Service
+│   └── Analyze security groups for open inbound rules
+│
+└── CloudTrail
+    └── Verify audit logging is enabled
+    
+🚀 Run This Yourself
+
+Requirements
+Python 3.9+
+AWS account
+boto3
+AWS CLI configured
+
+Step 1 — Clone the repository
+git clone https://github.com/YOUR_USERNAME/aws-cloud-security-auditor.git
+cd aws-cloud-security-auditor
+
+Step 2 — Install dependencies
+pip3 install boto3
+pip3 install -r requirements.txt
+
+Step 3 — Configure AWS credentials
+aws configure
+
+Provide:
+AWS Access Key ID
+AWS Secret Access Key
+Region
+Output format
+
+Step 4 — Run the security scan
+python3 scanner.py
+
+Open the dashboard:
+open report.html
