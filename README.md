@@ -47,74 +47,37 @@ The scanner analyzes common AWS security risks across IAM, S3, EC2 security grou
 - HTML reporting
 
 ## 📋 Real Output From My AWS Account
+```text
 =======================================================
-   AWS SECURITY AUDIT — IAM + S3 + EC2 + CLOUDTRAIL
-   Run at: 2026-03-12 18:34
-=======================================================
+AWS SECURITY AUDIT SUMMARY
 
-🔍 CHECK 1: S3 Bucket Public Access
-
-  📦 Bucket: security-test-2026
-  ✅ SAFE  | Public access block fully enabled
-
-🔍 CHECK 2: S3 Bucket Encryption
-
-  📦 Bucket: security-test-2026
-  ✅ SAFE  | Encryption enabled
-
-🔍 CHECK 3: EC2 Security Groups
-
-  ⚠️ WARNING | test-ssh (sg-002219d7c09553ecc)
-  Open inbound rule to 0.0.0.0/0 on tcp 22-22
-
-  ⚠️ WARNING | test-ssh (sg-002219d7c09553ecc)
-  Open inbound rule to 0.0.0.0/0 on tcp 0-0
-
-🔍 CHECK 4: IAM User MFA Status
-
-  ⚠️ WARNING | scanner-user does not have MFA enabled
-
-🔍 CHECK 5: IAM Access Key Age
-
-  ✅ SAFE  | scanner-user access key age is 5 days
-
-🔍 CHECK 6: CloudTrail Configuration
-
-  ⚠️ WARNING | CloudTrail is not enabled
+Total users scanned: 1
+Users WITH MFA: 0 ❌
+Users WITHOUT MFA: 1 ⚠️
 
 =======================================================
-   IAM SUMMARY
-=======================================================
-  Total users scanned : 1
-  Users WITH MFA      : 0 ❌
-  Users WITHOUT MFA   : 1 ⚠️
+S3 BUCKET SECURITY CHECKS
+
+📦 Scanning bucket: security-test-2026
+✔ Public Access | Blocked
+✔ Encryption | Enabled
+⚠ Access Logging | Not enabled
 
 =======================================================
-   S3 BUCKET SECURITY CHECKS
-=======================================================
+EC2 SECURITY GROUP FINDINGS
 
-  📦 Scanning bucket: security-test-2026
-     ✅ Public Access  | Blocked
-     ✅ Encryption     | Enabled
-     ⚠️ Access Logging | Not enabled
+⚠ sg-002219d7c09553ecc
+Open inbound rule to 0.0.0.0/0 on port 22
+Open inbound rule to 0.0.0.0/0 on port 0
 
 =======================================================
-   EC2 SECURITY GROUP FINDINGS
-=======================================================
+CLOUDTRAIL STATUS
 
-  ⚠️ sg-002219d7c09553ecc
-     Open inbound rule to 0.0.0.0/0 on port 22
-     Open inbound rule to 0.0.0.0/0 on port 0
+⚠ CloudTrail is not enabled
 
 =======================================================
-   CLOUDTRAIL STATUS
-=======================================================
-
-  ⚠️ CloudTrail is not enabled
-
-=======================================================
-   FULL AUDIT COMPLETE
-=======================================================
+FULL AUDIT COMPLETE
+```
 
 Detected Issues:
 - EC2 security group open to internet
