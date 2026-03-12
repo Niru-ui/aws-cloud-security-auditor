@@ -122,8 +122,6 @@ Detected Issues:
 - Root account MFA not enabled
 - CloudTrail logging disabled
 
-Report saved to: scan_report.json
-
 ## 🏗 How It Works
 
 ```text
@@ -148,39 +146,44 @@ AWS Account
 └── CloudTrail
     └── Verify audit logging is enabled
 ```
-```
+
 🚀 Run This Yourself
+```
 
 Requirements
 Python 3.9+
 AWS account
 boto3
 AWS CLI configured
+```
 
 Step 1 — Clone the repository
+```
 git clone https://github.com/YOUR_USERNAME/aws-cloud-security-auditor.git
 cd aws-cloud-security-auditor
+```
 
 Step 2 — Install dependencies
+```
 pip3 install boto3
 pip3 install -r requirements.txt
+```
 
 Step 3 — Configure AWS credentials
+```
 aws configure
-
-Provide:
-AWS Access Key ID
-AWS Secret Access Key
-Region
-Output format
+```
 
 Step 4 — Run the security scan
+```
 python3 scanner.py
-
+```
 Open the dashboard
+```
 open report.html
 ```
-```## 🌍 Real World Impact
+ 🌍 Real World Impact
+ ```
 
 | This Tool Catches | Real Breach It Prevents |
 |-------------------|-------------------------|
@@ -189,9 +192,9 @@ open report.html
 | Old access keys | Leaked credentials sold on dark web markets |
 | No root MFA | Complete account takeover if root is compromised |
 ```
-```
-🔑 What I Used To Build This
 
+🔑 What I Used To Build This
+```
 Python 3.11 — core scripting language
 boto3 — official AWS SDK for Python
 AWS IAM — Identity and Access Management service
