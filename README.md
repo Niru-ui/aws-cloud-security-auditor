@@ -193,12 +193,7 @@ open report.html
 | Old access keys | Leaked credentials sold on dark web markets |
 | No root MFA | Complete account takeover if root is compromised |
 ```
-🌍 Real World Impact
-This Tool Catches	Real Breach It Prevents
-No MFA on users	Most common AWS account takeover vector
-Public S3 buckets	Capital One breach — 100M records exposed
-Old access keys	Leaked credentials sold on dark web markets
-No root MFA	Complete account takeover if root is compromised
+
 
 🔑 What I Used To Build This
 ```
