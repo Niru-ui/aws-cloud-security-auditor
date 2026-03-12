@@ -2,6 +2,12 @@
 
 Automated AWS cloud security auditing tool built in Python that scans AWS infrastructure for security misconfigurations and generates a visual HTML security report.
 The scanner analyzes common AWS security risks across IAM, S3, EC2 security groups, and CloudTrail, calculates a security score, and provides remediation recommendations.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
+![AWS CLI](https://img.shields.io/badge/AWS%20CLI-Enabled-yellow)
+![boto3](https://img.shields.io/badge/AWS%20SDK-boto3-red)
+![Security](https://img.shields.io/badge/Cloud-Security-green)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ## 🔍 Security Checks
 
