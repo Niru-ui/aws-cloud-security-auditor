@@ -148,6 +148,7 @@ AWS Account
 └── CloudTrail
     └── Verify audit logging is enabled
 ```
+```
 🚀 Run This Yourself
 
 Requirements
@@ -176,17 +177,19 @@ Output format
 Step 4 — Run the security scan
 python3 scanner.py
 
-Open the dashboard:
+Open the dashboard
 open report.html
+```
+```## 🌍 Real World Impact
 
-🌍 Real World Impact
-
-This Tool Catches        Real Breach It Prevents
-No MFA on users          Most common AWS account takeover vector
-Public S3 buckets        Capital One breach — 100M records, $80M fine
-Old access keys          Leaked credentials sold on dark web markets
-No root MFA              Complete account takeover if root is compromised
-
+| This Tool Catches | Real Breach It Prevents |
+|-------------------|-------------------------|
+| No MFA on users | Most common AWS account takeover vector |
+| Public S3 buckets | Capital One breach — 100M records exposed |
+| Old access keys | Leaked credentials sold on dark web markets |
+| No root MFA | Complete account takeover if root is compromised |
+```
+```
 🔑 What I Used To Build This
 
 Python 3.11 — core scripting language
@@ -195,7 +198,7 @@ AWS IAM — Identity and Access Management service
 AWS S3 — Simple Storage Service
 AWS CLI — command line tool for AWS
 VS Code — development environment
-
+```
 ## 📍 About
 
 Hands-on cloud security project built to detect AWS misconfigurations using Python and the AWS SDK.
