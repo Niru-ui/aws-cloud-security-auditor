@@ -177,3 +177,20 @@ python3 scanner.py
 
 Open the dashboard:
 open report.html
+
+🌍 Real World Impact
+
+This Tool Catches        Real Breach It Prevents
+No MFA on users          Most common AWS account takeover vector
+Public S3 buckets        Capital One breach — 100M records, $80M fine
+Old access keys          Leaked credentials sold on dark web markets
+No root MFA              Complete account takeover if root is compromised
+
+🔑 What I Used To Build This
+
+Python 3.11 — core scripting language
+boto3 — official AWS SDK for Python
+AWS IAM — Identity and Access Management service
+AWS S3 — Simple Storage Service
+AWS CLI — command line tool for AWS
+VS Code — development environment
