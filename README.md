@@ -194,3 +194,14 @@ AWS IAM — Identity and Access Management service
 AWS S3 — Simple Storage Service
 AWS CLI — command line tool for AWS
 VS Code — development environment
+
+## 📍 About
+
+Hands-on cloud security project built to detect AWS misconfigurations using Python and the AWS SDK.
+
+This tool scans AWS services such as IAM, S3, EC2 security groups, and CloudTrail to identify security risks and generate a visual security report with remediation suggestions.
+
+Built as part of practical cloud security learning while pursuing an MS in Cybersecurity.
+
+📍 Fairborn, Ohio, USA  
+💼 Interested in Cloud Security / DevSecOps internships
