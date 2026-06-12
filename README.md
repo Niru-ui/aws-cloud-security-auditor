@@ -1,4 +1,4 @@
-k# AWS Cloud Security Auditor
+# AWS Cloud Security Auditor
 
 Automated AWS cloud security auditing tool built in Python that scans AWS infrastructure for security misconfigurations and generates a visual HTML security report.
 
