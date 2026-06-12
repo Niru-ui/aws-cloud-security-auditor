@@ -22,10 +22,7 @@ def check_s3_encryption(findings):
             except ClientError as e:
                 error_code = e.response["Error"]["Code"]
 
-                if error_code in [
-                    "ServerSideEncryptionConfigurationNotFoundError",
-                    "NoSuchBucket"
-                ]:
+                if error_code == "ServerSideEncryptionConfigurationNotFoundError":
                     print(f"  Warning: {bucket_name} does not have default encryption enabled.")
                     findings.append({
                         "service": "S3",
@@ -38,3 +35,39 @@ def check_s3_encryption(findings):
 
     except ClientError as e:
         print(f"Error listing S3 buckets for encryption check: {e}")
+
+
+def check_s3_versioning(findings):
+    print("\n[+] Checking S3 bucket versioning...")
+    s3 = boto3.client("s3")
+
+    try:
+        buckets = s3.list_buckets().get("Buckets", [])
+
+        if not buckets:
+            print("  No S3 buckets found.")
+            return
+
+        for bucket in buckets:
+            bucket_name = bucket["Name"]
+
+            try:
+                versioning = s3.get_bucket_versioning(Bucket=bucket_name)
+                status = versioning.get("Status", "Disabled")
+
+                if status == "Enabled":
+                    print(f"  Secure: {bucket_name} has versioning enabled.")
+                else:
+                    print(f"  Warning: {bucket_name} does not have versioning enabled.")
+                    findings.append({
+                        "service": "S3",
+                        "resource": bucket_name,
+                        "issue": "Bucket versioning not enabled",
+                        "severity": "Medium"
+                    })
+
+            except ClientError as e:
+                print(f"  Error checking versioning for {bucket_name}: {e}")
+
+    except ClientError as e:
+        print(f"Error listing S3 buckets for versioning check: {e}")
