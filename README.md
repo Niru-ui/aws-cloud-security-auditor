@@ -71,7 +71,7 @@ Tested and deployed on Amazon EC2 (Amazon Linux) using Python, AWS CLI, and Boto
 
 ---
 
-## 📋 Real Output From AWS Security Scan
+## 📋 Real Output From My AWS Account
 
 ```text
 =======================================================
