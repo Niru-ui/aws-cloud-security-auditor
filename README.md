@@ -148,15 +148,27 @@ Your Laptop / EC2 Instance
 
 ### Security Dashboard
 
-![Dashboard](docs/screenshots/dashboard.png)
+![Security Dashboard](docs/ad1.png)
 
 ### Terminal Scan Execution
 
-![Terminal Scan](docs/screenshots/terminal-scan.png)
+![Terminal Scan](docs/ad2.png)
 
 ### AWS Resources Tested
 
-![AWS Resources](docs/screenshots/aws-resources.png)
+![AWS Resources](docs/ad7.png)
+
+### S3 Buckets
+
+![S3 Buckets](docs/ad6.png)
+
+### Security Report
+
+![Security Report](docs/ad4.png)
+
+### CloudTrail & Recommendations
+
+![CloudTrail](docs/ad5.png)
 
 ---
 
