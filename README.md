@@ -161,7 +161,7 @@ Your Laptop / EC2 Instance
 
 ![Security Report](docs/ad4.png)
 ![Security Report](docs/ad5.png)
-![Security Report](docs/ad6.png)
+![Security Report](docs/ad10.png)
 
 ---
 
