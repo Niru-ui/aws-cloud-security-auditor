@@ -229,33 +229,6 @@ scan_report.json
 
 ---
 
-## 🔑 Skills Demonstrated
-
-* AWS Cloud Security
-* IAM Security Controls
-* Security Auditing
-* Cloud Misconfiguration Detection
-* Security Group Analysis
-* CloudTrail Monitoring
-* Python Automation
-* Boto3 Development
-* Risk Assessment
-* Security Reporting
-
----
-
-## 🔮 Future Enhancements
-
-* CIS AWS Benchmark Checks
-* AWS Config Integration
-* AWS Security Hub Integration
-* Multi-Account Scanning
-* PDF Report Generation
-* Automated Remediation Recommendations
-* Continuous Security Monitoring Dashboard
-
----
-
 ## 📍 About
 
 Hands-on cloud security project built to identify AWS misconfigurations using Python and the AWS SDK (Boto3).
