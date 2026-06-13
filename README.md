@@ -59,15 +59,14 @@ Tested and deployed on Amazon EC2 (Amazon Linux) using Python, AWS CLI, and Boto
 
 ## 🛠 What I Used To Build This
 
-* Python
-* AWS SDK for Python (Boto3)
-* AWS CLI
-* Amazon EC2
-* AWS IAM
-* Amazon S3
-* AWS CloudTrail
-* HTML Reporting
-* Git & GitHub
+* Python - core scripting langauge
+* Boto3 - official AWS SDK for Python
+* AWS CLI - command line toll for AWS
+* Amazon EC2 - Elastic Compute Cloud Service
+* AWS IAM - Identity Access and Management Service
+* Amazon S3 - Simple Storage Service
+* AWS CloudTrail - Audit logging and monitoring service 
+* VS Code - development environment
 
 ---
 
