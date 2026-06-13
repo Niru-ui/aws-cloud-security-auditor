@@ -1,0 +1,13 @@
+## 📸 Screenshots
+
+### EC2 Deployment
+![EC2 Instance](docs/screenshots/ad1.png)
+
+### Security Scan Execution
+![Terminal Scan](docs/screenshots/terminal-scan.png)
+
+### Security Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+
+### S3 Resources
+![S3 Buckets](docs/screenshots/s3-buckets.png)
