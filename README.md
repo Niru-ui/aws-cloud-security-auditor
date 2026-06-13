@@ -57,7 +57,7 @@ Tested and deployed on Amazon EC2 (Amazon Linux) using Python, AWS CLI, and Boto
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 What I Used To Build This
 
 * Python
 * AWS SDK for Python (Boto3)
