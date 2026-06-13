@@ -144,31 +144,24 @@ Your Laptop / EC2 Instance
 
 ---
 
-## 📸 Screenshots
+## 📸 Project Demonstration
 
-### Security Dashboard
+### AWS EC2 Instance Deployment
 
 ![Security Dashboard](docs/ad1.png)
+
+### S3 Buckets
+![Security Dashboard](docs/ad7.png)
 
 ### Terminal Scan Execution
 
 ![Terminal Scan](docs/ad2.png)
 
-### AWS Resources Tested
-
-![AWS Resources](docs/ad7.png)
-
-### S3 Buckets
-
-![S3 Buckets](docs/ad6.png)
-
 ### Security Report
 
 ![Security Report](docs/ad4.png)
-
-### CloudTrail & Recommendations
-
-![CloudTrail](docs/ad5.png)
+![Security Report](docs/ad5.png)
+![Security Report](docs/ad6.png)
 
 ---
 
